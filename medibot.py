@@ -37,7 +37,7 @@ def load_llm(huggingface_repo_id, HF_TOKEN):
 
 
 def main():
-    st.title("Ask Chatbot!")
+    st.title("Ask MediDas!")
 
     if 'messages' not in st.session_state:
         st.session_state.messages = []
