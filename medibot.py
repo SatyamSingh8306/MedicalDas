@@ -62,7 +62,7 @@ def main():
                 Start the answer directly. No small talk please.
                 """
         
-        HUGGINGFACE_REPO_ID="mistralai/Mistral-7B-Instruct-v0.3"
+        HUGGINGFACE_REPO_ID= "mistralai/Mistral-7B-Instruct-v0.3" #"deepseek-ai/DeepSeek-R1"
         HF_TOKEN=os.environ.get("HF_TOKEN")
 
         try: 
@@ -82,7 +82,9 @@ def main():
 
             result=response["result"]
             source_documents=response["source_documents"]
-            result_to_show=result+"\nSource Docs:\n"+str(source_documents)
+            #not including the source in result
+            # result_to_show=result+"\nSource Docs:\n"+str(source_documents)
+            result_to_show = result
             #response="Hi, I am MediBot!"
             st.chat_message('assistant').markdown(result_to_show)
             st.session_state.messages.append({'role':'assistant', 'content': result_to_show})
